@@ -16,7 +16,7 @@ public class Grupo {
     }
 
     public List<Cachorro> getCachorros() {
-	return puntos;
+	return cachorros;
     }
 
     public boolean isTermino() {
@@ -28,7 +28,7 @@ public class Grupo {
     }
 
     public void limparCachorros() {
-	puntos.clear();
+	cachorros.clear();
     }
 
     @Override
