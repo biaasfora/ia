@@ -84,18 +84,17 @@ C:\\Users\\user\\ProjetoIA\\ProjetoIA\\src\\BD1.txt   FileReader("C:\\Users\\use
 
 public class Rodar{
 	 public static void main(String[] args) {
-		    Scanner ler = new Scanner(System.in);
+		 List<Cachorro> cachorros = new ArrayList<Cachorro>();
+		 Scanner ler = new Scanner(System.in);
 		 
+		 for (int i = 0; i < 74; i++) {
 		   		    try {
 		      FileReader arq = new FileReader("C:\\\\Users\\\\user\\\\ProjetoIA\\\\ProjetoIA\\\\src\\\\BD1.txt");
 		      BufferedReader lerArq = new BufferedReader(arq);
-		 
-		      String linha = lerArq.readLine(); // lê a primeira linha
-		// a variável "linha" recebe o valor "null" quando o processo
-		// de repetição atingir o final do arquivo texto
+		      String linha = lerArq.readLine(); 
+		      
 		      while (linha != null) {
-		        System.out.printf("%s\n", linha);
-		 
+		        		 
 		        linha = lerArq.readLine(); // lê da segunda até a última linha
 		      }
 		 
@@ -104,7 +103,10 @@ public class Rodar{
 		        System.err.printf("Erro na abertura do arquivo: %s.\n",
 		          e.getMessage());
 		    }
+		   		    
 		 
 		    System.out.println();
 		  }
 		}
+}
+
