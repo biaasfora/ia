@@ -1,3 +1,4 @@
+/*
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -458,3 +459,4 @@ public void calculaHigiene(float atributo, ArrayList<Cachorro> dogs, int x) {
 		}
 
 }
+*/

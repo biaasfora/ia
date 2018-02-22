@@ -13,7 +13,7 @@ public class Kmeansresultado {
 		this.grupos = grupos;
 	    }
 
-	    public List<Grupo> getGrupo() {
+	    public List<Grupo> getGrupos() {
 		return grupos;
 	    }
 

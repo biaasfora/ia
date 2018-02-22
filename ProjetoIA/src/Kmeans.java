@@ -9,7 +9,7 @@ public class Kmeans {
 
 	while (!finalizo(grupos)) {
 	    prepararGrupos(grupos);
-	    asignarPuntos(cachorros, grupos);
+	    atribuirCachorros(cachorros, grupos);
 	    recalcularCentroides(grupos);
 	}
 
@@ -29,7 +29,7 @@ public class Kmeans {
 	    Arrays.fill(d, 0f);
 	    for (Cachorro c : g.getCachorros()) {
 		for (int i = 0; i < c.getGrau(); i++) {
-		    d[i] += (g.get(i) / c.getCachorros().size());
+		    d[i] += (c.get(i) / g.getCachorros().size());
 		}
 	    }
 
@@ -96,8 +96,8 @@ public class Kmeans {
 	    Float min = Float.POSITIVE_INFINITY, max = Float.NEGATIVE_INFINITY;
 
 	    for (Cachorro cachorro : cachorros) {
-		min = min > cachorro.get(i) ? cachorros.get(0) : min;
-		max = max < cachorro.get(i) ? cachorros.get(i) : max;
+		min = min > cachorro.get(i) ? cachorro.get(0) : min;
+		max = max < cachorro.get(i) ? cachorro.get(i) : max;
 	    }
 
 	    maximos.add(max);

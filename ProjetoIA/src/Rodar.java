@@ -3,11 +3,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedReader;
+import java.util.Scanner;
+import java.util.Random;
 
-import au.com.bytecode.opencsv.CSVReader;
+/*import au.com.bytecode.opencsv.CSVReader;
 
 public class Rodar {
-    public static void main(String[] args) throws IOException {
+	/*public static void main(String[] args) throws IOException {
 	CSVReader reader = new CSVReader(new FileReader("data.csv"));
 	FileWriter writer = new FileWriter("out.csv");
 
@@ -18,17 +21,46 @@ public class Rodar {
 		Cachorro c = new Cachorro(strings);
 	    cachorros.add(c);
 	}
+*//* public static void main(String[]args) throws IOException{
+	FileReader reader = new FileReader("BD1.txt");
+	FileWriter writer = new FileWriter("BD1.txt");
+	
+	List<String[]> minhasEntradas = reader.readAll();
+	List<Cachorro> cachorros = new ArrayList <Cachorro>();
+	
+/*	ArrayList<Cachorro> listaDeCaes = new ArrayList<Cachorro>();
+	Scanner ler = new Scanner(System.in);
+	String BD1 = ler.nextLine();
+	
+*/
+	/*for (String[] strings : minhasEntradas) {
+		Cachorro c = new Cachorro(strings);
+	    cachorros.add(c);
+	}
+	/*for (int i = 0; i < 74; i++) {
+		try {
 
-	Kmeans kmeans = new Kmeans();
-	for (int k = 1; k <= 5; k++) {
+			FileReader arq = new FileReader("BancodeDados\\BD1.txt");
+			BufferedReader lerArq = new BufferedReader(arq);
+			String linha = lerArq.readLine();
+		//	System.out.println(Cachorro.get(i));
+			
+			
+		} catch (IOException e) {
+			System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+		}
+	}
+
+*/
+/*	Kmeans kmeans = new Kmeans();	for (int k = 1; k <= 5; k++) {
 	    Kmeansresultado resultado = kmeans.calcular(cachorros, k);
 	    writer.write("------- Con k=" + k + " aux=" + resultado.getAux()
 		    + "-------\n");
 	    int i = 0;
-	    for (Grupo grupo : resultado.getGrupo()) {
+	    for (Grupo grupo : resultado.getGrupos()) {
 		i++;
 		writer.write("-- Grupo " + i + " --\n");
-		for (Cachorro cachorro : Grupo.getCachorros()) {
+		for (Cachorro cachorro : grupo.getCachorros()) {
 		    writer.write(cachorro.toString() + "\n");
 		}
 		writer.write("\n");
@@ -37,5 +69,42 @@ public class Rodar {
 	    }
 	}
 	writer.close();
-    }
-}
+		}
+}*/
+/*
+public class Rodar{
+public static void main(String[] args) throws IOException {
+   BufferedReader br = new BufferedReader(new		 
+C:\\Users\\user\\ProjetoIA\\ProjetoIA\\src\\BD1.txt   FileReader("C:\\Users\\user\\ProjetoIA\\ProjetoIA\\src\\BD1.txt"));
+   String linha = br.readLine();
+	  System.out.println();
+	  br.close();	
+	}
+} */
+
+public class Rodar{
+	 public static void main(String[] args) {
+		    Scanner ler = new Scanner(System.in);
+		 
+		   		    try {
+		      FileReader arq = new FileReader("C:\\\\Users\\\\user\\\\ProjetoIA\\\\ProjetoIA\\\\src\\\\BD1.txt");
+		      BufferedReader lerArq = new BufferedReader(arq);
+		 
+		      String linha = lerArq.readLine(); // lê a primeira linha
+		// a variável "linha" recebe o valor "null" quando o processo
+		// de repetição atingir o final do arquivo texto
+		      while (linha != null) {
+		        System.out.printf("%s\n", linha);
+		 
+		        linha = lerArq.readLine(); // lê da segunda até a última linha
+		      }
+		 
+		      arq.close();
+		    } catch (IOException e) {
+		        System.err.printf("Erro na abertura do arquivo: %s.\n",
+		          e.getMessage());
+		    }
+		 
+		    System.out.println();
+		  }
+		}
