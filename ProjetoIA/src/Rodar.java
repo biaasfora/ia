@@ -84,6 +84,7 @@ C:\\Users\\user\\ProjetoIA\\ProjetoIA\\src\\BD1.txt   FileReader("C:\\Users\\use
 
 public class Rodar{
 	 public static void main(String[] args) {
+		 
 		 List<Cachorro> cachorros = new ArrayList<Cachorro>();
 		 Scanner ler = new Scanner(System.in);
 		 
@@ -102,11 +103,29 @@ public class Rodar{
 		    } catch (IOException e) {
 		        System.err.printf("Erro na abertura do arquivo: %s.\n",
 		          e.getMessage());
-		    }
+		    }	
 		   		    
 		 
 		    System.out.println();
 		  }
-		}
+		
+		 Kmeans kmeans = new Kmeans();	
+		 	for (int k = 0; k < 74; k++) {
+			    Kmeansresultado resultado = kmeans.calcular(cachorros, k);
+			    System.out.println("------- Con k=" + k + " aux=" + resultado.getAux()
+				    + "-------\n");
+			    int i = 0;
+			    for (Grupo grupo : resultado.getGrupos()) {
+				i++;
+				System.out.println("-- Grupo " + i + " --\n");
+				for (Cachorro cachorro : grupo.getCachorros()) {
+					System.out.println(cachorro.toString() + "\n");
+				}
+				System.out.println("\n");
+				System.out.println(grupo.getCentroide().toString());
+				System.out.println("\n\n");
+			    }
+			}
+		 
+			}
 }
-
